@@ -1,0 +1,1357 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f4f1e8;
+
+    color: #26352b;
+
+    overflow: hidden;
+}
+
+
+body {
+    position: relative;
+}
+
+
+/* =====================================
+   MATCHA BACKGROUND
+===================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 550px;
+    height: 550px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(126, 153, 118, 0.28),
+            transparent 70%
+        );
+
+    filter: blur(60px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =====================================
+   PAGE
+===================================== */
+
+.page {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s;
+
+    z-index: 2;
+}
+
+
+.page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.content {
+
+    width: 100%;
+
+    max-width: 800px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =====================================
+   TEXT
+===================================== */
+
+.small-text {
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #71806f;
+
+    margin-bottom: 20px;
+
+    text-transform: uppercase;
+}
+
+
+h1 {
+
+    font-size:
+        clamp(
+            50px,
+            9vw,
+            95px
+        );
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+    color: #344b39;
+}
+
+
+h2 {
+
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            68px
+        );
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+
+    color: #344b39;
+}
+
+
+h3 {
+
+    font-size: 27px;
+
+    margin-bottom: 15px;
+
+    color: #344b39;
+}
+
+
+p {
+
+    color: #687269;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+button {
+
+    margin-top: 30px;
+
+    padding:
+        14px 27px;
+
+    border:
+        1px solid #718b6d;
+
+    border-radius: 50px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        );
+
+    color: #344b39;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+button:hover {
+
+    background: #718b6d;
+
+    color: white;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            80,
+            105,
+            82,
+            0.2
+        );
+}
+
+
+button:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* =====================================
+   CHAPTER
+===================================== */
+
+.chapter-container {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    max-height: 94vh;
+
+    overflow-y: auto;
+
+    padding:
+        30px 20px;
+
+    scrollbar-width: none;
+}
+
+
+.chapter-container::-webkit-scrollbar {
+
+    display: none;
+}
+
+
+/* =====================================
+   CHAPTER DESCRIPTION
+===================================== */
+
+.chapter-description {
+
+    max-width: 650px;
+
+    margin:
+        0 auto 40px;
+
+    color: #748075;
+}
+
+
+/* =====================================
+   MEMORY
+===================================== */
+
+.memory {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 55px;
+
+    margin:
+        20px auto 35px;
+
+    max-width: 1200px;
+
+    text-align: left;
+}
+
+
+.memory.reverse {
+
+    flex-direction: row-reverse;
+}
+
+
+.memory img {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    width: 380px;
+
+    height: 470px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 25px
+        rgba(
+            45,
+            62,
+            49,
+            0.2
+        );
+
+    border:
+        8px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.memory img:hover {
+
+    transform:
+        scale(1.02)
+        rotate(1deg);
+}
+
+
+/* =====================================
+   MEMORY TEXT
+===================================== */
+
+.memory-text {
+
+    flex: 1;
+
+    max-width: 900px;
+}
+
+
+.memory-text span {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #718b6d;
+}
+
+
+.memory-text h3 {
+
+    margin-top: 15px;
+}
+
+
+.memory-text p {
+
+    color: #778078;
+    text-align: justify;
+    text-justify: inter-word;
+   
+    line-height: 1.9;
+    
+}
+
+
+/* =====================================
+   CHAPTER BUTTONS
+===================================== */
+
+.chapter-buttons,
+.navigation-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.chapter-buttons button,
+.navigation-buttons button {
+
+    margin-top: 15px;
+}
+
+
+/* =====================================
+   CHAPTER 4 CARDS
+===================================== */
+
+.moments {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 35px;
+}
+
+
+.moment-card {
+
+    padding: 28px 20px;
+
+    border:
+        1px solid
+        rgba(
+            92,
+            117,
+            91,
+            0.18
+        );
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            60,
+            80,
+            63,
+            0.08
+        );
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.moment-card:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+
+.moment-icon {
+
+    font-size: 35px;
+
+    color: #718b6d;
+
+    margin-bottom: 10px;
+}
+
+
+.moment-card h3 {
+
+    font-size: 20px;
+}
+
+
+.moment-card p {
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   COUNTER
+===================================== */
+
+#loveCounter {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin:
+        35px 0;
+}
+
+
+.counter-box {
+
+    width: 105px;
+
+    padding:
+        20px 10px;
+
+    border:
+        1px solid
+        rgba(
+            92,
+            117,
+            91,
+            0.2
+        );
+
+    border-radius: 17px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            60,
+            80,
+            63,
+            0.07
+        );
+}
+
+
+.counter-box strong {
+
+    display: block;
+
+    font-size: 34px;
+
+    color: #536d54;
+
+    margin-bottom: 5px;
+}
+
+
+.counter-box span {
+
+    font-size: 11px;
+
+    color: #879087;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================
+   QUIZ
+===================================== */
+
+.quiz-container {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    text-align: center;
+}
+
+
+.quiz-container h2 {
+
+    font-size:
+        clamp(
+            28px,
+            5vw,
+            45px
+        );
+
+    color: #344b39;
+
+    margin:
+        30px 0;
+}
+
+
+#questionNumber {
+
+    color: #8a938a;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+.quiz-progress {
+
+    width: 100%;
+
+    height: 5px;
+
+    margin:
+        20px 0 30px;
+
+    background:
+        rgba(
+            80,
+            100,
+            80,
+            0.1
+        );
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+#progressBar {
+
+    width: 33.33%;
+
+    height: 100%;
+
+    background: #718b6d;
+
+    transition:
+        width 0.5s ease;
+}
+
+
+.answers {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.answer-btn {
+
+    margin: 0;
+
+    padding: 18px;
+
+    border:
+        1px solid
+        rgba(
+            92,
+            117,
+            91,
+            0.25
+        );
+
+    border-radius: 15px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    color: #344b39;
+}
+
+
+.answer-btn:hover {
+
+    background:
+        #718b6d;
+
+    color: white;
+}
+
+
+#quizMessage {
+
+    min-height: 25px;
+
+    margin-top: 20px;
+
+    color: #718b6d;
+}
+
+
+/* =====================================
+   LETTER
+===================================== */
+
+.letter-container {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    text-align: center;
+}
+
+
+.letter-box {
+
+    padding: 35px;
+
+    border:
+        1px solid
+        rgba(
+            92,
+            117,
+            91,
+            0.2
+        );
+
+    border-radius: 22px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(
+            60,
+            80,
+            63,
+            0.1
+        );
+
+    text-align: left;
+
+    max-height: 55vh;
+
+    overflow-y: auto;
+}
+
+
+#letterText {
+
+    white-space: pre-line;
+
+    color: #5f6961;
+
+    line-height: 2;
+
+    font-size: 16px;
+}
+
+
+/* =====================================
+   FINAL
+===================================== */
+
+.final-content {
+
+    text-align: center;
+
+    animation:
+        finalAppear
+        1.2s ease;
+}
+
+
+.final-heart {
+
+    font-size:
+        clamp(
+            90px,
+            15vw,
+            150px
+        );
+
+    color: #718b6d;
+
+    animation:
+        heartbeat
+        1.5s
+        infinite;
+}
+
+
+.final-content h2 {
+
+    margin-top: 25px;
+
+    color: #536d54;
+}
+
+
+.final-hearts {
+
+    margin-top: 30px;
+
+    color: #718b6d;
+
+    font-size: 25px;
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+}
+
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =====================================
+   FLOATING HEARTS
+===================================== */
+
+.heart {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    pointer-events: none;
+
+    color: #718b6d;
+
+    opacity: 0;
+
+    z-index: 1;
+
+    animation:
+        floatHeart
+        linear
+        forwards;
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 0.45;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================
+   MOBILE / HP
+===================================== */
+
+@media (max-width: 700px) {
+
+    .page {
+
+        padding:
+            18px;
+    }
+
+
+    h1 {
+
+        font-size: 48px;
+    }
+
+
+    h2 {
+
+        font-size: 38px;
+    }
+
+
+    p {
+
+        font-size: 14px;
+    }
+
+
+    .chapter-container {
+
+        max-height: 96vh;
+
+        padding:
+            25px 10px;
+    }
+
+
+    .chapter-description {
+
+        margin-bottom: 25px;
+    }
+
+
+    /* FOTO + TEKS MENJADI VERTIKAL */
+
+    .memory,
+    .memory.reverse {
+
+        flex-direction: column;
+
+        gap: 25px;
+
+        text-align: center;
+
+        margin-bottom: 25px;
+    }
+
+
+    .memory img {
+
+        width: 88%;
+
+        height: 380px;
+    }
+
+
+    .memory-text {
+
+        width: 90%;
+
+        max-width: none;
+    }
+
+
+    .memory-text h3 {
+
+        font-size: 24px;
+    }
+
+
+    .chapter-buttons {
+
+        gap: 8px;
+    }
+
+
+    .chapter-buttons button {
+
+        padding:
+            12px 19px;
+
+        font-size: 13px;
+    }
+
+
+    .moments {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #loveCounter {
+
+        gap: 6px;
+    }
+
+
+    .counter-box {
+
+        width: 74px;
+
+        padding:
+            15px 5px;
+    }
+
+
+    .counter-box strong {
+
+        font-size: 25px;
+    }
+
+
+    .counter-box span {
+
+        font-size: 9px;
+    }
+
+
+    .answers {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .answer-btn {
+
+        padding: 15px;
+    }
+
+
+    .letter-box {
+
+        padding: 23px;
+    }
+
+
+    #letterText {
+
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+#musicButton {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(52, 75, 57, 0.25);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+
+    color: #344b39;
+    font-size: 18px;
+
+    cursor: pointer;
+    z-index: 9999;
+
+    box-shadow: 0 8px 25px rgba(52, 75, 57, 0.15);
+
+    transition: all 0.3s ease;
+}
+
+#musicButton:hover {
+    transform: scale(1.08);
+}
+
+#musicButton.playing {
+    animation: musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(113, 139, 109, 0.35);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(113, 139, 109, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(113, 139, 109, 0);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    #musicButton {
+        right: 18px;
+        bottom: 18px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 16px;
+    }
+
+}
+
+#musicButton {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(52, 75, 57, 0.2);
+
+    background: rgba(255, 255, 255, 0.75);
+
+    backdrop-filter: blur(12px);
+
+    color: #344b39;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 8px 25px rgba(52, 75, 57, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#musicButton:hover {
+
+    transform: scale(1.08);
+
+}
+
+#musicButton.playing {
+
+    animation: musicPulse 2s infinite;
+
+}
+
+@keyframes musicPulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0 rgba(113, 139, 109, 0.35);
+
+    }
+
+    70% {
+
+        box-shadow:
+            0 0 0 12px rgba(113, 139, 109, 0);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 0 rgba(113, 139, 109, 0);
+
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    #musicButton {
+
+        width: 44px;
+        height: 44px;
+
+        right: 18px;
+        bottom: 18px;
+
+        font-size: 16px;
+
+    }
+
+}
+
+.video-container {
+    width: min(900px, 92%);
+    max-height: 94vh;
+    overflow-y: auto;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.video-container h2 {
+    margin: 15px 0 30px;
+    font-size: clamp(28px, 4vw, 42px);
+    color: #344b39;
+}
+
+
+.video-wrapper {
+    position: relative;
+
+    width: min(88vw, 420px);
+    margin: 0 auto;
+
+    padding: 6px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #718b6d,
+        #d8dfd2,
+        #718b6d
+    );
+
+    box-shadow:
+        0 20px 45px rgba(52, 75, 57, 0.20),
+        0 0 0 1px rgba(52, 75, 57, 0.12);
+
+    box-sizing: border-box;
+}
+
+.video-wrapper video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 17px;
+
+    background: #000;
+
+    object-fit: contain;
+}
+
+.video-wrapper {
+    padding: 4px;
+
+    border: 1px solid rgba(113, 139, 109, 0.45);
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px rgba(52, 75, 57, 0.20);
+}
+
+.video-caption {
+    margin: 20px auto;
+    max-width: 600px;
+    color: #687269;
+    line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+
+    .video-wrapper {
+        width: 88vw;
+        max-width: 380px;
+
+        padding: 5px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 15px 35px rgba(52, 75, 57, 0.18),
+            0 0 0 1px rgba(52, 75, 57, 0.12);
+    }
+
+    .video-wrapper video {
+        width: 100%;
+        height: auto;
+
+        border-radius: 13px;
+    }
+
+}
